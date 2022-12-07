@@ -1,2 +1,3 @@
 @echo off
-.\bin\main < .\test\input2.txt
+rem .\bin\main < .\test\input2.txt
+.\bin\main

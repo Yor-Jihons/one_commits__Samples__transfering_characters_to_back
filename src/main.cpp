@@ -3,7 +3,7 @@
 #include<sstream>
 #include<algorithm>
 #include<memory>
-#include<limits>
+#include<queue>
 
 using namespace std;
 
@@ -48,6 +48,36 @@ namespace Util{
 
 
 int main( int argc, char** argv ){
-    
+    int n;
+    cin >> n;
+
+    std::string s;
+    cin >> s;
+
+    // 3≦|S|≦20
+    if( s.size() < 3 || s.size() > 20 ){ return -1; }
+
+    std::queue<char> all_queue;
+    for( int i = 0; i < static_cast<int>(s.size()); i++ ){
+        all_queue.push( static_cast<char>(s[i]) );
+    }
+
+    std::queue<char> transfered_queue;
+    for( int i = 0; i < n; i++ ){
+        transfered_queue.push( static_cast<char>(all_queue.front()) );
+        all_queue.pop();
+    }
+
+    while( !all_queue.empty() ){
+        cout << static_cast<char>(all_queue.front()) << flush;
+        all_queue.pop();
+    }
+
+    while( !transfered_queue.empty() ){
+        cout << static_cast<char>(transfered_queue.front()) << flush;
+        transfered_queue.pop();
+    }
+
+    cout << endl;
 return 0;
 }
