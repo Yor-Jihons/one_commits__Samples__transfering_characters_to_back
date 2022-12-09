@@ -5,6 +5,7 @@ This is a sample so that I can commit this to the GitHub.
 ## 1. Question
 
 半角英数字で構成された文字列Sが与えられる。このSに以下の処理を行い。その結果の文字列を表示するプログラムを組め。
+ただし、異常系については考慮しないものとする。
 
 1. 文字列Sの先端を末尾に持っていく
 2. 1をN回繰り返す
